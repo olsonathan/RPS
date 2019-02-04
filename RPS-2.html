@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+  <body onload="myFunction()"style="background-color: bisque";>
+
+    <div class="container">
+
+            
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-8">
+               <h1>Rock Paper Scissors</h1>   
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>   
+    
+
+    <div class="container">
+
+            
+        <div class="row">
+            <div class="col-md-4">
+                <img width="400" height="500" src="C:\Users\Nathan\Documents\UM_Coding\3.2\RPS\photo-1507832321772-e86cc0452e9c.jpg">
+            </div>
+            <div class="col-md-4">
+                <img width="400" height="500" src="C:\Users\Nathan\Documents\UM_Coding\3.2\RPS\photo-1470790376778-a9fbc86d70e2.jpg">   
+            </div>
+            <div class="col-md-4">
+                <img width="400" height="500" src="C:\Users\Nathan\Documents\UM_Coding\3.2\RPS\photo-1515678811459-78f50f861ba6.jpg">    
+            </div>
+        </div>
+    </div>   
+    
+    <script>
+
+    function myFunction() {
+
+    
+
+    var ques = confirm ("Do you want to play Rock Paper Scissors");
+
+    if (ques === true) {
+        var t = prompt("How many times would you like to play?");
+    
+        var tt = parseInt(t)
+        var i = 0
+    }
+
+    else {  
+        alert("You are no fun...you should play");
+
+    }    
+
+    var score = 0
+    
+    while (i < tt){    
+    
+    
+        var choice = prompt("Make your choice rock, paper, or scissors");
+
+        var choices = choice.charAt(0)
+        
+        //document.write(choices);
+
+        
+        var computerChoices = ["r", "p", "s"];
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+
+        //document.write(computerGuess)
+      
+        if (computerGuess === choices) {
+          alert("Its a Draw " + choices + " = " + computerGuess )
+            var count = 0.5
+        }
+
+        else if (choices === "r" && computerGuess === "p" || choices === "p" && computerGuess === "s" || choices === "s" && computerGuess === "r"){
+          alert("You have lost " + choices + " > " + computerGuess)
+          var count = (-1)
+        }
+
+        else if (choices === "r" && computerGuess === "s" || choices === "p" && computerGuess === "r" || choices === "s" && computerGuess === "p"){
+          alert("You are a Winner " + choices + " < " + computerGuess)
+          var count = 1
+        }
+      
+        else if (choices !== "r" || "s" || "p"){
+          alert("What are you trying to play? you have wasted your turn...try again")
+          var count = 0
+        }
+
+        var score = score + count
+            alert(" The score is " + score)
+
+        var i = (i + 1)
+
+    }
+    
+    if (score > 1){
+        alert("Final Score is " + score + " you did very well!!")
+    }
+    
+    if (score > 0 && score <= 1){
+        alert("Final Score is " + score + " not bad")
+    }
+    
+    if (score <= 0 ){
+        alert("Lets not talk about the Final Score " + score)
+    }
+
+    var quest2 = confirm("Do you want to play again?");
+
+    if (quest2 === true){
+        location.reload();
+    }
+
+
+
+};
+
+    
+
+    </script>
+    
+  </body>
+</html>
